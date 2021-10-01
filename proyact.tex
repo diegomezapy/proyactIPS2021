@@ -1,0 +1,685 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{soul}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{latexsym,amsmath,amssymb,amsfonts,cancel,stmaryrd,amsthm}%amsthm permite cargar estilo de teorema
+\usepackage[left=2cm,right=1.5cm,top=1.5cm, bottom=1.5cm]{geometry}
+%\usepackage{hyperref}
+\usepackage[hyperindex=true,breaklinks=true,colorlinks=true,linkcolor=black]{hyperref}%Crea hipervínculo al índice
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{setspace}%para reducir espacios entre las lineas de la tabla de algun parrafo o lista
+%\usepackage{dirtytalk}
+\usepackage{enumitem} % para items con letras
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+\setlength{\headheight}{0.6mm}
+\usepackage{ragged2e}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% definir parametros de los diagramas
+\usepackage{tikz}
+\usepackage{lscape}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes,arrows,arrows,positioning,fit}
+\usetikzlibrary{shapes,arrows}
+% Define block styles
+\tikzstyle{block} = [rectangle, draw, fill=white!20, 
+text width=6em, text centered, rounded corners, minimum height=2em ]
+\tikzstyle{line} = [draw, -latex']
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\definecolor{lightgray}{gray}{0.85}
+\let\olditemize\itemize %para reducir espacio entre los items de itemize
+\def\itemize{\olditemize\itemsep=0pt }
+
+\usepackage{fancyhdr}
+\fancyhead{} 
+\pagestyle{fancy}
+\fancyhf{
+%\cfoot{\thepage}
+\rfoot[]{\thepage}
+%\renewcommand{\baselinestretch}{-1.2}
+%\lfoot{\footnotesize Asesoría Actuarial}
+%\lfoot{\footnotesize Valuación Actuarial del Fondo de Jubilaciones y Pensiones del IPS}
+%\rfoot{\footnotesize Valuación Actuarial del Fondo de Jubilaciones y Pensiones} % texto izquierda de la cabecera
+}
+
+%\fancyhead[LO]{\nouppercase{\leftmark}} % En las páginas impares, parte izquierda del encabezado, aparecerá el nombre de capítulo
+%\fancyhead[RE]{\nouppercase{\rightmark}} % En las páginas pares, parte derecha del encabezado, aparecerá el nombre de sección
+\rhead{\nouppercase{\leftmark}}
+\renewcommand{\headrulewidth}{0.5 pt} % Ancho de la línea horizontal bajo el encabezado, colocar 0 para que no aparezca
+\newcommand{\G}{\cancel{G}}
+
+\begin{document}
+\renewcommand{\listtablename}{\bf{Lista de Tablas}}
+\renewcommand{\tablename}{\bf{Tabla}}% CAMBIA EL NOMBRE DE LOS CUADROS A TABLAS.
+\renewcommand{\figurename}{\bf{Figura}}
+
+
+\newpage
+\thispagestyle{empty}
+\begin{center}%\addcontentsline{toc}{section}{\textbf{RESUMEN}}
+\LARGE\bf {Estudios y Proyecciones Actuariales}\\
+\LARGE\bf {del}\\
+\LARGE\bf {Fondo de Jubilaciones y Pensiones}\\
+\LARGE\bf {del Instituto de Previsión Social}\\
+\LARGE\bf {2021 - 2100}\\
+%\Large\bf {(Informe Extenso)}\\
+\vspace{3cm}
+
+
+\begin{figure}[h!]
+\begin{center}
+	\label{fig:logoIPS}
+		\includegraphics[scale=1]{logoIPS.eps}
+		\end{center}
+\end{figure}
+
+
+\vspace{2cm}
+\LARGE\bf {Asesoría Actuarial}\\
+\LARGE\bf {Año 2021}\\
+\vspace{2cm}
+\end{center}
+
+%INDICE + LISTA DE TABLAS
+\newpage
+\tableofcontents
+%\newpage
+%\listoftables
+
+
+
+
+\newpage
+\section{Introducción}
+
+El presente trabajo constituye el Estudio Actuarial del Fondo de Jubilaciones y Pensiones del Instituto de Previsión Social (IPS) de acuerdo con lo establecido en el Art. 26 del Dto. Ley Nº 1860/50, aprobado por Ley Nº 375/56, modificado por el Art. 2º de la Ley Nº 98/92.
+
+El propósito del Estudio Actuarial de un sistema de previsión social es dar un diagnóstico sobre el estatus actual de los elementos de un sistema previsional, así como de sus expectativas a futuro. Las proyecciones elaboradas constituyen una herramienta indispensable para la toma de decisiones, buscando mantener la sostenibilidad a mediano y largo plazo de un Sistema de Jubilaciones y Pensiones como el administrado por el Instituto de Previsión Social.
+
+Un Estudio Actuarial requiere de un modelo matemático “multi-enfoque” (demográfico, económico y financiero a la vez), por lo que para la realización del presente trabajo se han considerado aspectos fundamentales, expuestos en capítulos para una mejor comprensión de su contenido. 
+
+En el Capítulo 1 se realiza una descripción del contexto actual del Paraguay, dividido en secciones que se refieren al contexto demográfico, laboral y económico. En el Capítulo 2, se consideran las perspectivas para el Paraguay, para un periodo de 79 años, tomando como año base 2020 y la proyección hasta el año 2100.  Las secciones hacen referencia a la proyección demográfica y a la proyección del escenario laboral.
+
+En el Capítulo 3, se expone la situación actual del IPS, estableciendo el marco legal, su ámbito de aplicación, cómo se obtienen los recursos financieros para la financiación de los servicios, tanto de jubilación como de salud, las prestaciones de jubilaciones y pensiones que se otorgan, así como los requisitos para acceder a ellos.
+
+En lo que respecta a información sobre la envergadura del IPS, se presentan indicadores tales como: la cantidad total de beneficios pagados en jubilaciones y pensiones (stock), los nuevos beneficios pagados en jubilaciones y pensiones y la distribución de años de aportes. Otro aspecto importante que trata este capítulo se refiere al Fondo de Jubilaciones y Pensiones, donde se realiza un análisis de los ingresos y los gastos reales de la Institución.
+
+En el Capítulo 4, se expone la metodología utilizada para las proyecciones, donde se describen los módulos generales o macros de: población, económico y de remuneraciones (salarios) del mercado laboral objetivo; así como los módulos específicos del sistema, las proyecciones de jubilaciones, pensiones e invalidez, y el Fondo de Jubilaciones y Pensiones.  Este capítulo concluye con la sección donde se hace referencia a las principales fuentes de datos.
+
+En el Capítulo 5 se presentan los resultados de las proyecciones realizadas, primeramente, lo referente a Cobertura, los nuevos beneficios pagados (altas) según el tipo de beneficio y la relación aportantes/beneficios.  En la sección “Resultados Financieros” se exponen las proyecciones de ingresos, egresos, así como la evolución del Fondo de Jubilaciones y Pensiones. Y en la última sección de este Capítulo se presenta el Balance Actuarial, que representa la diferencia entre el Valor Presente de las Obligaciones Futuras y la suma del Valor Presente de las Contribuciones Futuras y el Activo que respalda dichas obligaciones.
+
+Tanto para el análisis de la evolución del superávit/déficit corriente como del Fondo de Reservas y el Balance Actuarial se tomaron en cuenta varios escenarios, incluyendo el escenario base donde no se considera el aporte estatal y se paga el Beneficio Adicional Anual regularmente.
+
+El documento finaliza con dos capítulos, uno dedicado a las conclusiones del estudio y el último dedicado a una serie de recomendaciones y comentarios de diversos aspectos, que van desde fallas técnicas y lagunas legales, hasta ajustes que se deberían implementar en busca de mayor equidad para los asegurados y en favor de la sostenibilidad del Sistema Previsional.
+
+
+%Resulta importante recalcar que los resultados de este informe presentan variaciones con respecto al Informe Actuarial anterior  (IPS, 2015) debido a cambios y actualizaciones ocurridos en los datos utilizados como insumos, como ser en la cantidad de personas (población total menor) y las proyecciones de la Esperanza de Vida publicadas por la DGEEC, así como también debido a modificaciones metodológicas en la EPH a partir del año 2016.  Al mismo tiempo se contemplaron los cambios propios del IPS observados en las probabilidades de altas por tipo de beneficio calculados con los valores observados en el año 2017, inferiores en comparación a los obtenidos en el año 2014, a pesar de conservar las mismas definiciones utilizadas en el Informe precedente. 
+
+\newpage
+\input{projact_marcolegal}
+\newpage
+\input{projact_metod}
+\newpage
+\input{projact_contexhist_demog}
+\newpage
+\input{projact_contexhist_laboral}
+\newpage
+\input{projact_contexhist_familia}
+\newpage
+\input{projact_contexhist_econom}
+\newpage
+\input{projact_datosIPSactivos}
+\newpage
+\input{projact_datosIPSactivos_dencot}
+\newpage
+\input{projact_datosIPS_JyP_altas}
+\newpage
+\input{projact_datosIPS_JyP_stock}
+\newpage
+\input{projact_datosIPS_relActPas}
+\newpage
+%\input{projact_caterainver}
+%\newpage
+%\input{projact_}
+%\newpage
+%\input{projact_}
+%\newpage
+%\input{projact_}
+%\newpage
+%\input{projact_}
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Cobertura del IPS}
+
+Considerando la cobertura del IPS sobre la población total ocupada se puede ver en la figura 46 que la tasa presenta un incremento lento y sostenido pasando del 21,3\% en 2018 a 28,5\% en el año 2100.  Así también se puede apreciar la cobertura sobre la PEA y en este caso la tasa pasa del 20,2\% al 27,2\% para el mismo lapso de tiempo.
+
+Se debe tener en cuenta que la población objetivo del IPS son sólo los trabajadores del sector privado en relación de dependencia, y no todos los trabajadores ocupados, por tanto, la tasa de cobertura sobre la Población Total Ocupada Dependiente entre 15 a 69 años de edad (asalariados del Sector Privado y trabajadores domésticos) se comporta de manera similar, pero con valores superiores, pasando del 41,5\% al 55,3\% para el final de la proyección.
+
+\textbf{falta el gráfico de Proyección de la Tasa de Cobertura del IPS}
+
+En el año 2018 se registra un total de 701.607 cotizantes entre 15 y 69 años de edad, de los cuales 446.310 (63,6\%) son hombres y 255.297 (36,4\%) son mujeres. Para el año 2100 se proyecta que la cantidad total de aportantes en el mismo rango de edad ascienda a 1.775.795 personas, de los cuales 1.051.229 (59,2\%) serán hombres y 724.566 mujeres (40,8\%) (ver Gráfico x).
+
+\textbf{falta el gráfico Proyección de la cantidad de aportantes}
+
+
+Se estima que el IPS contará con un total de aproximadamente 65.500 beneficios de Jubilaciones y Pensiones pagados en el mes de diciembre del año 2018 y según los resultados de la proyección se espera que esta cantidad ascienda a casi 500.000 pagos para el año 2100. 
+
+\textbf{falta el gráfico Proyección de la cantidad de Beneficios}
+
+En el Gráfico x se puede observar la proyección del peso o participación que representa cada tipo de beneficio en el total de jubilaciones y pensiones pagadas en diciembre de cada año. Resulta notable el cambio importante observado en la gráfica, donde los porcentajes varían principalmente dentro de los primeros 20 años de proyección, para luego alcanzar cierta estabilidad hasta el final de la proyección. Para el año base, los beneficios JON, JOA, JP, JI y PDH representaban 66, 7, 4, 7 y 17 pagos respectivamente por cada 100, y para el final de la proyección se espera que esta distribución cambie a 36, 20, 4, 4 y 35 de cada 100 pagos. De esta manera los aumentos más importantes, se espera ocurran en la PDH y la JOA. 
+
+\textbf{falta le gráfico Peso relativo según tipo de Beneficio}
+
+\subsubsection{Altas de beneficios anuales}
+
+La proyección de la cantidad de altas por año se presenta en el Gráfico x donde para el año 2018 se espera que el IPS cuente con aproximadamente 5.800 nuevos pagos otorgados en beneficios de Jubilaciones y Pensiones\footnote{Las pensiones incluyen los pagos periódicos de pensión por viudez y los pagos de orfandad.} . La Jubilación Ordinaria y las de Pensiones son las que presentan el aumento más importante en términos absolutos, mientras que la Jubilación Ordinaria Anticipada, la Proporcional y la de Invalidez presentan aumentos más moderados. Para el año 2100 se espera contar con aproximadamente 22.000 nuevos pagos en el año.
+
+\textbf{falta el gráfico Proyección de la cantidad de nuevos beneficios (altas) pagados en Jubilaciones y Pensiones}
+
+\subsubsection{Proyección Relación Aporte/Beneficio}
+
+Como ya se mencionó en el Capítulo III “Situación Actual del IPS”, un importante indicador obtenido es la relación entre la cantidad de aportantes y la cantidad de beneficios otorgados. En el año 2018 este indicador tendrá un valor de 10,7\footnote{Este valor es obtenido de la base de datos de activos y pasivos y el mismo difiere del valor publicado oficialmente por la Dirección de Aportes, debido a que las definiciones aplicadas para las proyecciones de los activos solo incluyen a las edades entre 15 y 69 años} , lo que significa que había aproximadamente 11 aportantes por cada beneficio otorgado. Según los resultados este valor tendrá una disminución lenta hasta llegar a un valor de 3,6 en el final de la proyección.
+
+\textbf{falta el grafico Proyección de la relación Aportantes/Beneficios}
+
+\subsection{Resultados Financieros}
+
+Uno de los objetivos del presente trabajo es que las proyecciones se basen en las condiciones actuales del Sistema Jubilatorio del IPS, por lo que en vez de utilizar un modelo de proyecciones general, se ha realizado los módulos necesarios para representar los principales casos de beneficios (Jubilación Ordinaria, Jubilación Ordinaria Anticipada, Jubilación Proporcional, Pensión por Invalidez, Pensión Derechohabiente).
+
+Con el propósito de presentar un modelo de proyecciones lo más cercano a la realidad, se expondrán primeramente los resultados del “Escenario Base sin Aporte Estatal”, donde se consideran 12 pagos mensuales de Jubilaciones y Pensiones, y seguidamente un “Escenario Base con Aporte Estatal” (básicamente lo estipulado en la legislación actual, pero no implementado).
+
+Así también, si bien la legislación contempla el pago de un Beneficio Adicional Anual (decimotercer haber jubilatorio o mal llamado aguinaldo), este depende de que los cálculos actuariales y las posibilidades financieras y presupuestarias lo permitan, y finalmente de la decisión del Consejo de Administración (por mayoría absoluta de los miembros) para ser pagado.  Por tal motivo se consideran escenarios alternativos de “Escenario con Pago BAA” con y sin Aporte Estatal.
+
+Seguidamente se analizará la proyección de Ingresos, posteriormente la proyección de Egresos y finalmente la proyección del Resultado Corriente.
+
+\subsubsection{Recaudaciòn (Aporte Obrero - Patronal)}
+
+Para el cálculo de las recaudaciones Obrero-Patronales se considera la masa salarial total con 12 salarios proyectada y se le aplica la alícuota del 12,5\%, obteniéndose así los ingresos por recaudación. Los resultados se representan en el Gráfico x donde se observa que la recaudación va desde el 1,41\% del PIB en el 2018 a un 1,97\% del PIB en el 2100.
+
+Mientras que, si se considera una masa salarial total con 13 sueldos, la recaudación aumenta al 1,53\% y 2,13\% del PIB para el 2018 y 2100 respectivamente.  La alternativa de 13 sueldos se plantea para analizar el impacto de financiar el BAA con aportes sobre el aguinaldo (hoy día la legislación vigente no lo permite).
+
+\textbf{falta el gráfico Recaudación según Masa Salarial (en \% del PIB)}
+
+En el gráfico precedente se puede apreciar que el crecimiento en la recaudación se proyecta lento pero sostenido si se lo toma en términos relativos al Producto Interno Bruto, es decir, en porcentajes, mientras que al proyectarlo en valores absolutos (Gráfico x) se aprecia un incremento mayor a partir de la segunda mitad del periodo bajo consideración.
+
+\textbf{falta el gráfico Recaudación según Masa Salarial (valores nominales)}
+
+\subsubsection{Egresos por prestaciones}
+
+El gasto en prestaciones, para el año 2018 se proyecta en 1,05\% del PIB, aumentando en forma paulatina y sostenida durante todos los años de la proyección, llegando al año 2100 a un 3,64\% del PIB.
+
+\textbf{falta el gráfico Egresos por Jubilaciones y Pensiones}
+
+Similar al comportamiento de los Ingresos, cuando se consideran los Egresos en términos nominales, el incremento en la segunda mitad se comienza a acelerar.
+
+\textbf{falta el gráfico Egresos por Jubilaciones y Pensiones}
+
+Con respecto a la composición del gasto, se puede ver en el Gráfico x, que en el año 2018 las Jubilaciones de Vejez, Pensiones por Derechohabiente y por Jubilaciones por Invalidez representan 87\%, 9\% y 4\% del gasto total respectivamente. Según los resultados de la proyección, el peso de las Jubilaciones tendrá un descenso sostenido en los primeros 20 años de proyección para luego estabilizarse en un valor de 72\% del gasto total. En contrapartida, las Pensiones y las Invalideces experimentarán un aumento sostenido durante el mismo lapso de tiempo para luego estabilizarse en un 24\% y 3\% respectivamente.
+
+\textbf{falta el gráfico Composición del gasto según tipo de Beneficio}
+
+El gasto en prestaciones con respecto a la masa de aportes se proyecta en un valor aproximado del 74\% para el año 2018, este valor experimentará un aumento sostenido hasta aproximadamente el año 2044, donde los gastos ya alcanzan el 100\% de la masa de aportes.  La tendencia a continuación es de un aumento hasta el final de la proyección alcanzando un valor del 149\%
+
+\textbf{falta el grafico Gastos por prestaciones (en \% de la Masa Salarial Imponible)}
+
+Queda claro que el porcentaje de aporte al Sistema de Jubilaciones es superior al requerido si se lo considera como un sistema de reparto puro, por lo que la diferencia va generando un Fondo que será utilizado cuando los aportes obrero-patronales ya no sean suficientes para hacer frente a las erogaciones.
+
+En el Gráfico x se representa cómo evolucionaría la tasa de aporte al Sistema Jubilatorio si fuera un sistema de reparto puro con actualización de la tasa al final de cada año para mantener el equilibrio financiero del sistema.
+
+\textbf{falta el gráfico Gastos sobre la Masa Salarial Imponible}
+
+Se puede apreciar que en el año 2044 se alcanzaría un equilibrio con 12,4\% de aportes sobre los salarios, a partir de ese año los aportes ya no serían suficientes y para el año 2067 se requeriría que la misma sea del 18,6\%.
+
+\subsubsection{Resultado corriente}
+
+El Resultado Corriente es la diferencia entre las proyecciones de Ingresos (aportes obrero-patronales sin considerar las ganancias por la rentabilidad del Fondo) y Egresos (prestaciones por Jubilaciones y Pensiones).
+
+En el Gráfico x se representan las proyecciones de Ingresos y Egresos en relación al PIB, donde se puede apreciar que las líneas se cruzan en el año 2044, quedando claro que existe un Superávit y posterior al mismo año un Déficit Corriente.
+
+\textbf{falta el grafico Ingresos y Egresos por Jubilaciones y Pensiones}
+
+En el Gráfico x puede apreciarse los resultados de la proyección de los Ingresos y Egresos contrastando el efecto de la inclusión del Aporte Estatal. En el año 2018 los Egresos representan el 1,05\% del PIB, experimentando luego un aumento sostenido hasta el final de la proyección, donde alcanza un valor que representará el 3,64\% del PIB. 
+
+Se resaltan dos puntos de interés en el gráfico, el primero indica el punto de coincidencia entre los Ingresos y los Egresos (sin el pago del BAA) en el año 2044 con un valor de los Egresos del 1,67\% del PIB. El otro punto de interés indica cuando se cruzan las líneas de los Ingresos (considerando el aporte del estado) y los Egresos, el cual se sitúa en el año 2050, alcanzando los egresos en este punto un 1,94\% del PIB.
+
+\textbf{falta el gráfico Resultado corriente (con y sin aporte estatal)}
+
+En el Gráfico x se representa la Evolución del Resultado Corriente con (RCcAE) y sin Aporte Estatal (RCsAE) (1,5\% sobre los salarios), donde se puede apreciar que se parte de actual Superávit de 0,36\% RCsAE y 0,53\% RCcAE, para llegar a un Déficit del 0,68\% y 0,90\% respectivamente en el año 2067.  El hecho de no contar con el Aporte Estatal genera que el Déficit Corriente se adelante 6 años.
+
+\textbf{falta el grafico Resultado corriente con y sin aporte estatal (recaudación - prestaciones)}
+
+\subsubsection{Fondo de Reserva}
+
+Está claro que como actualmente existe un Superávit Corriente, esto permite acumular un Fondo de Reservas. Si bien la legislación vigente establece una separación entre el “Fondo de Jubilaciones y Pensiones” y el “Fondo para Ajustes de Jubilaciones y Pensiones”, a los efectos del presente trabajo se considera que todos los Superávits van a un único “Fondo Común”\footnote{En el Capítulo de Recomendaciones se entra en mayor detalle sobre la justificación de un único Fondo.}. 
+
+La financiación de las Jubilaciones y Pensiones está basada en tres pilares: los Aportes, la Rentabilidad del “Fondo Común” y la Estructura de la población cubierta.  En la práctica lo que se produce es que con el dinero ingresado por aportes se pagan las jubilaciones y pensiones, la diferencia engrosa el “Fondo Común” y esto permite realizar inversiones de largo plazo.
+
+El “Fondo Común” tiene básicamente dos objetos: 1) Asistir al pago de beneficios ante dificultades de liquidez transitoria (una alta Desocupación genera una disminución en los aportes al Sistema); 2) Financiar las Jubilaciones cuando se produzca la transición demográfica y disminuya la proporción de jóvenes en edad de trabajar.
+
+En el Gráfico x se representan al Superávit/Déficit Corriente y el comportamiento del Fondo de Reservas.  Se parte del Fondo Acumulado hasta el año 2017 y se proyecta (sin rentabilidad) que tendrá un saldo máximo en el 2044 y luego iría disminuyendo a razón de la necesidad de cubrir los Déficits Corrientes hasta agotarlo 11 años después en el año 2056.
+
+\textbf{Falta el gráfico Superávit / Déficit Cte. (valores nominales)}
+
+\textbf{Falta el gráfico Superávit / Déficit Cte. (en relación al PIB)}
+
+La administración del Fondo debe tener como guía en primer lugar la SEGURIDAD de las inversiones y en segundo término la RENTABILIDAD, por lo que considerando el principio de prudencia, se han proyectado distintos escenarios de tasa de rentabilidad.
+
+En primer lugar, se ha considerado la posibilidad de mantener el poder adquisitivo del dinero, lo que representa obtener una rentabilidad real igual a 0\% (cero) y en esta situación se estima que se utilizaran todos los recursos para el año 2066.
+
+En caso obtener una rentabilidad real del 1\% y 2\%, se posterga la extinción de los recursos 5 y 12 años hasta llegar al 2071 y 2078 respectivamente.
+
+\textbf{Falta el gráfico Evolución del Fondo de Reserva}
+
+\subsubsection{Beneficio Adicional Anual}
+
+El Decreto Ley N° 1.860/50, aprobado por Ley N° 375/56, modificado por el artículo 2° de la Ley N° 98/92 establece entre una de las obligaciones del consejo de administración en el inciso P:
+\textit{Otorgar, por mayoría absoluta de los miembros del Consejo, a los jubilados, pensionados y derecho habientes, un beneficio anual adicional con cargo al Fondo de Jubilaciones y Pensiones consistente en el pago de un importe equivalente a la doceava parte de las remuneraciones devengadas durante el año calendario a favor de los mismos, siempre que los cálculos actuariales y las posibilidades financieras y presupuestarias lo permitan}
+
+Este beneficio se ha otorgado regularmente, pero a efectos de las proyecciones descriptas hasta aquí no se ha considerado este pago, en el Gráfico x se puede observar el resultado de la proyección de ingresos y egresos contemplando el pago del citado beneficio. Considerando el Aporte Estatal se espera que los Ingresos y Egresos se igualen en el año 2050.  Si no se considera el Aporte Estatal el Déficit se adelanta 6 años para producirse en el año 2044.
+
+\textbf{Falta el gráfico Ingresos y Egresos con y sin Beneficio Adicional Anual}
+
+Respecto al Fondo de Reserva, se puede apreciar en el Gráfico x varias líneas que representan la evolución del Fondo de Reserva como proporción del PIB. En primer lugar, se proyecta la posibilidad de mantener el poder adquisitivo del dinero, lo que representa obtener una rentabilidad real igual a 0\% (cero) y en esta situación se estima que se utilizarán todos los recursos para el año 2060 (seis años antes que en el escenario base). De igual manera se proyecta el Fondo con las tasas de rentabilidad del 1\% y 2\%, con lo que se posterga la extinción de los recursos hasta los años 2063 y 2068 respectivamente.
+
+\textbf{Falta el gráfico Evolución del Fondo con el pago del BAA}
+
+\subsection{Balance actuarial}
+
+\subsubsection{Antecedentes}
+
+Respecto a la obligación legal del Instituto de Previsión Social (IPS) de realizar un Balance Actuarial, tal requerimiento no se encuentra expresamente establecido en la Carta Orgánica, ni existen requerimientos legales para que el IPS los presente a entidad de control alguna.
+
+En otros países existe un requerimiento para que las Entidades Previsionales Privadas publiquen al final de cada periodo fiscal el Balance Actuarial conjuntamente con los Estados Contables e incluso incorporan en el Balance Contable los resultados de las Reservas Matemáticas.
+
+Atendiendo que los anteriores Informes Actuariales del Fondo de Jubilaciones y Pensiones que fueron elaborados por consultores internacionales Grushka (2007); Organización Iberoamericana de Seguridad Social (2010), los cuales no realizaron Balances Actuariales por no existir requerimientos legales, sino proyecciones actuariales con desarrollo anual a 50 años de ingresos y egresos, por presentar ventajas a la hora de exponer la información para no-especialistas, se decidió mantener dicha metodología de trabajo para la elaboración de los “Estudios y Proyecciones Actuariales del Régimen de Jubilaciones y Pensiones del Instituto de Previsión Social” el cual fue íntegramente elaborado por la Oficina de Cálculos Actuariales y aprobado por RCA Nº059-016/14 del 10 de julio de 2014.
+
+Las ventajas que presenta la publicación de una Proyección Actuarial ante un Balance Actuarial, es que la proyección no sólo muestra la evolución del equilibrio actuarial, sino que estima cuando comenzaría a producirse un déficit, así como el nivel de sensibilidad ante variaciones de la tasa de interés; mientras que el Balance Actuarial expone el monto de Superávit o Déficit que pudiera existir a valores de hoy.
+
+Independientemente de la existencia o no de un requerimiento legal, el Consejo de Administración del IPS ha solicitado\footnote{Solicitud realizada por Nota SC N°047-0617/15.}  la elaboración del Balance Actuarial, el cual es incluido en el presente trabajo.
+
+El Balance Actuarial representa la diferencia entre el Valor Presente de las Obligaciones Futuras y la suma del Valor Presente de las Contribuciones Futuras y el Activo que respalda dichas obligaciones a una fecha de corte.  
+
+Las “Reservas Matemáticas” representan la obligación que tiene el Fondo (Administrador y/o Sistema) con los afiliados, ya sean estos “Beneficios Concedidos y/o Irrevocables” o “Beneficios a Conceder”, y cuando se registran se hace como un Pasivo en el Balance del Fondo. 
+
+Para estimar las “Reservas Matemáticas” en el caso de los “Beneficios Concedidos” (Jubilaciones y Pensiones), solo se requiere estimar el “Valor Presente de los Compromisos Futuros” (VPCF), donde se tiene en cuenta la edad, sexo, estado civil del beneficiario y el monto del beneficio para proyectar los beneficios a pagar y tiempo durante el cual se pagará (esperanza de vida del titular y beneficiarios), para finalmente calcular el valor actual a la fecha de corte de las estimaciones realizadas.
+
+En el caso de los “Beneficios a Conceder”, se debe realizar primeramente la estimación del Valor Presente de los Compromisos Futuros, y posteriormente establecer una metodología para constituir las “Reservas Matemáticas” en función a si se considera un grupo cerrado o abierto.
+
+Por el lado de los ingresos se debe estimar el “Valor Presente de los Ingresos Futuros” (VPIF) que consisten en las estimaciones de los ingresos por aportes sobre salarios, para lo cual se proyecta la evolución de salarios, probabilidad de sobrevivir activo y permanecer en la empresa.  Mientras que el Patrimonio representan los recursos con los que actualmente cuenta el Fondo (Administrador y/o Sistema) y se encuentran registrados en sus Estados Contables.
+
+Para el presente estudio se considera un grupo abierto, el cual incluye a todos los afiliados, presentes y futuros bajo el supuesto que continuará el Sistema operativo bajo las mismas condiciones legales durante el horizonte de la proyección.  De esta manera se tiene en cuenta si las cotizaciones futuras serán suficientes para solventar los compromisos futuros.  Los supuestos utilizados son los mismos utilizados para la Proyección Actuarial del presente trabajo, utilizando la tasa de interés técnico del 2\% real establecido por RCA 038-008/11.  
+
+Las estimaciones se han realizado para el escenario más real, donde no hay aporte del Estado y se paga el Beneficio Adicional Anual.  Se presentan con dos plazos, uno a 70 años, para poder compararlo con las estimaciones que suele realizar organismos internacionales y otra a 82 años para analizar si se profundiza o revierte la tendencia del primer resultado.
+
+\subsubsection{Resultados}
+
+En la Tabla x se presenta el Balance Actuarial en guaraníes, teniendo como base el ejercicio cerrado al año 2017, con plazos de proyecciones a 70 y 82 años, mientras que en la Tabla x los mismos resultados en dólares a un tipo de cambio de Gs.5.590\footnote{Cotización del 28.12.2017 publicada en https://www.bcp.gov.py/webapps/web/cotizacion/monedas } -US\$1.
+
+En el caso de la proyección a 70 años, se estima un Déficit Actuarial de US\$5.611 millones, mientras que, si la proyección se extiende a 82 años, el Déficit Actuarial se incrementa a US\$9.361 millones.
+
+\textbf{Falta tabla de Balance Actuarial(en Gs.}
+
+\textbf{Falta tabla de Balance Actuarial (en US\$}
+
+\section{Conclusiones}
+
+Conforme a los resultados obtenidos, sobre la base de la proyección demográfica, se espera que la población del Paraguay pase de 6.953.646 habitantes observados en el año 2017 a un total de 12.321.283 en el año 2100, lo que representa un crecimiento entre puntas del 77,2\% y un incremento interanual promedio próximo al 0,69\%. La Tasa Global de Fecundidad para el quinquenio 2015-2019 es del 2,50 hijos en promedio por cada mujer en edad reproductiva (15 – 49 años de edad) indicador que aún se encuentra en valores por encima de la media mundial, pero se asume que irá disminuyendo e iniciando un proceso de envejecimiento al igual que en el resto de los países de la región, para el año 2100 se asume que se situará en 1,96. La distribución por edades indica una población mayoritariamente joven en el 2017, más al final de la proyección la forma de la distribución cambiará considerablemente, pasando a observarse una población más envejecida.
+
+El escenario laboral para el año 2017, indica una alta participación, especialmente de los hombres y en general un bajo nivel de desocupación, se proyecta iguales niveles de participación para los hombres y una leve mejoría en el de las mujeres, existiendo de esta manera aún un amplio margen para ampliar la cobertura del Seguro Social.
+
+Las principales características del país en el marco de la Seguridad Social son: a) Transición Demográfica acelerada; b) Inequidades en la redistribución de los Ingresos; c) Alta Informalidad en el mercado laboral, alta Tasa de Empleo no Registrado (ENR); y d) Baja Capacidad de transferir recursos públicos o ingresos de finanzas públicas a la Seguridad Social (debido a que existen otras prioridades).
+
+Se puede decir que el IPS ha entrado en una etapa de reformas, sobre todo si se refiere a la incorporación de nuevos grupos. Efectivamente, se puede mencionar la incorporación del Magisterio Privado, la adhesión obligatoria para los empleados domésticos y adhesión voluntaria de los trabajadores por cuenta propia y la introducción de la ley que otorga una Jubilación Proporcional con 15 años de aporte y 65 años de edad.
+
+Para el año 2017 el IPS registró una relación de 10,9 aportantes (entre 15 y 69 años de edad) por cada beneficio otorgado, lo cual puede considerarse bastante alto no sólo en comparación a los países de la región, sino también teniendo en cuenta la antigüedad de la Caja de Jubilaciones, que con muchos años de vida usualmente presentan una relación más baja. Se proyecta que esta relación disminuirá a 3,6 para el año 2100.
+
+Asumiendo un incremento interanual constante de 0,98\% para la tasa de cobertura (en cada sexo y edad simple) durante todo el periodo de proyección resultó un aumento entre puntas (2017-2100) de 161\% en la cantidad de cotizantes, en concordancia a los niveles de aumentos observados en los últimos 5 años, lo cual se sustenta no sólo en la mejoría de los procedimientos de fiscalización sino en las condiciones económicas favorables del país que han impulsado la formalización de la economía.
+
+Mientras que los Pasivos para el mismo periodo que se proyecta presenten un aumento aproximado de 700\%, como consecuencia principalmente a la introducción de la ley de Jubilación Proporcional en el año 2011 y asociado con la transición demográfica (envejecimiento de la población) que sufrirá no sólo la población cubierta por la Caja de Jubilaciones del IPS sino el país, se generará un aumento sostenido en la cantidad de nuevos pagos en jubilaciones y pensiones.  Esto, combinado con los actuales requisitos de antigüedad, aportes y alta tasa de sustitución, impulsaran el aumento sostenido de los gastos por jubilaciones y pensiones.
+
+El Escenario Base donde no se considera el Aporte Estatal y teniendo en cuenta el pago del Beneficio Adicional Anual, es el escenario más realista de acuerdo a las condiciones imperantes.  Este Escenario proyecta que a partir del año 2041 se iniciará un Déficit Corriente (los egresos por jubilaciones y pensiones superarán a los ingresos por aportes obrero-patronal) y el Fondo de Reservas se extinguirá en el año 2052 si se mantiene en promedio una rentabilidad al menos igual al poder adquisitivo del dinero.
+
+Obtener tasas de rentabilidad reales positivas permitirá al Fondo de Reservas postergar la extinción de recursos por unos años, pero no será posible sostener indefinidamente problemas estructurales que tiene el Sistema Previsional (alta tasa de sustitución, aumento de la esperanza de vida y envejecimiento de la población).
+
+La posibilidad de suprimir el Beneficio Anual Adicional u obtener financiación mediante aportes sobre el aguinaldo podría postergar 5 años el Déficit Corriente en caso de no recibir el aporte del estado, pero las tendencias del régimen no cambiarían sustancialmente.
+
+A partir del presente Informe se incorpora el Balance Actuarial, el cual presenta un déficit de US\$5.611 millones considerando un horizonte de 70 años, si la proyección se extiende a 82 años, el Déficit Actuarial se incrementa a US\$9.361 millones.
+
+En el siguiente y último capítulo del Informe se presentan algunos comentarios y sugerencias que plantean desde correcciones técnicas y lagunas legales hasta la propuesta de análisis para realizar algunos ajustes al Sistema.
+
+\section{Comentarios y sugerencias}
+
+\subsection{Sistema de Jubilación}
+
+Si bien la Carta Orgánica del Instituto de Previsión Social no establece explícitamente cuál es el Sistema Jubilatorio que administra, por cómo se establecen los aportes y los beneficios, queda claro que no es un Sistema de Capitalización ni un Sistema de Reparto (al menos uno puro).
+
+Tanto las fuentes de financiación como los beneficios se encuentran establecidos por ley, y si bien la relación entre los aportes y el beneficio recibido no es perfecta (financiación total), se busca que haya cierta relación entre el esfuerzo contributivo y el haber jubilatorio.
+
+Adicionalmente, desde la reforma introducida con la Ley 98/92 hasta la fecha, los aportes obrero-patronal no sólo son suficientes para cubrir los egresos, sino que permiten la acumulación de un Fondo de Reserva.  
+
+Si bien se puede definir de una u otra manera atendiendo los criterios establecidos por las distintas escuelas del pensamiento, teniendo en cuenta estas características, podemos decir que el Sistema administrado por el IPS es un Sistema de Beneficio Definido y Capitalización Colectiva con un Fondo de Reserva.
+
+\subsection{Ampliación de la Cobertura}
+
+Un punto a tener en cuenta, es que, en la actualidad, cuando se habla de “Cobertura” no sólo se hace referencia a la posibilidad de registrar y finalmente recibir aportes de un trabajador, sino se hace hincapié en la posibilidad de que los ciudadanos de un país puedan recibir una protección de la Seguridad Social en función de sus características y necesidades particulares.
+
+Mientras exista informalidad en el Empleo o Empleo no Registrado (ENR) y se mantengan las inequidades en la redistribución del ingreso, será imposible ampliar la Cobertura basada exclusivamente en los aportes de los trabajadores.
+
+La formalización tardará en producirse, por lo que se deben adoptar medidas adecuadas en el Sistema de Seguridad Social de acuerdo a la calidad del mercado laboral.  La Universalización de las pensiones en los países latinoamericanos es de difícil aplicación debido a que no existen recursos fiscales suficientes para financiarlo.
+
+Es importante comprender que la función u objetivo de los Sistemas de Seguridad Social no es la de corregir las fallas del Mercado Laboral, sino brindar protección a las personas ante las contingencias que ponen en peligro su salud y su capacidad de generar ingresos.
+
+En particular, la función de un Sistema Previsional es tratar de solucionar el problema de la “miopía intertemporal del ingreso”, que no es otra cosa que la falta de previsión de las personas respecto a los gastos que tendrán durante la vejez, cuando ya no tendrán la posibilidad de seguir trabajando y generando ingresos.
+
+Como su nombre lo dice, el sistema busca “prever” esa situación, y lo realiza mediante distintos mecanismos, pero en esencia toma una parte de los ingresos de los trabajadores con el compromiso de restituirlo como jubilación y/o pensión. El Sistema administra riqueza, por lo que los bajos salarios generarán bajas pensiones.
+
+\subsection{Recursos Administrativos}
+
+Uno de los mayores retos es mantener los registros y bases de datos con información precisa de los aportantes, ya que el registro adecuado permite determinar con mayor rapidez y agilidad si la persona cuenta con los requisitos para acceder a los beneficios, así como la historia laboral permite la determinación del monto del haber jubilatorio.  
+
+Adicionalmente, una base de datos confiable permite obtener indicadores (como la densidad de aporte), lo cual es fundamental para los Análisis Estratégicos por sector socio-económico, principalmente del sector informal.  Así como una oportunidad para tratar de relacionar la riqueza del beneficio jubilatorio en función del esfuerzo contributivo.
+
+Si bien existe una base de datos informatizada y actualizada de los aportes a partir del año 2000, los registros anteriores a dicha fecha aún no se encuentran vinculadas ni disponibles en las cuentas de los asegurados.  El hecho de contar con los registros anteriores al año 2000 digitalizados es un paso importante, pero se requiere avanzar en la sistematización para asignar dichos registros a los asegurados.
+
+Una cuestión aún pendiente compete a los registros de los beneficiarios de los trabajadores activos.
+Estos registros son importantes porque deberían ser los insumos para generar importantes indicadores sobre los potenciales beneficiarios de la Pensión Derecho Habiente, tanto de viudez como de orfandad. Para este informe las estadísticas relativas a los beneficiarios como la edad media de la esposa y de los hijos se han generado utilizando la EPH y se refieren a los familiares de toda la población mayor a 14 años de edad y no exactamente limitada a la población cotizante al IPS. Esto se debe principalmente a que los registros administrativos sobre los beneficiarios presentan un gran nivel de subregistro.
+
+\subsection{Reformas Legales}
+
+Existen una serie de reformas que otorgan nuevos beneficios o introducen nuevos grupos de aportantes bajo distintas leyes y en algunos casos se han introducido requisitos de elegibilidad diferentes u otorgando beneficios diferenciados. Como ejemplo se consideran las nuevas leyes, éstas han ido tomando innovaciones que tienden a una mayor edad de retiro (65 años para la Jubilación Proporcional), pero no existe una coordinación para converger hacia una edad-tasa de sustitución de referencia entre los distintos tipos de beneficios (Jubilación Proporcional, Anticipada y la Ordinaria).
+
+Existen artículos de la Carta Orgánica del IPS distribuidos en leyes que la modifican o amplían, que además de crear una maraña legislativa muchas veces complicado de comprender, en otras ocasiones contienen fallas en la redacción que las hacen inaplicables y/o generan lagunas legales, por lo que se requiere una “corrección técnica” de las leyes que no necesariamente impliquen ajustes paramétricos ni cambios estructurales al Sistema de Pensiones.
+
+Atendiendo la abundancia y complejidad no sólo de las leyes, sino también de los Decretos y Resoluciones que reglamentan esas leyes, la Asesoría Actuarial ha hecho el esfuerzo de elaborar el “Digesto Normativo del IPS” con el objetivo de contar con un documento que exponga las leyes y reglamentos que norman el funcionamiento de la Institución y que particularmente afectan a los empleadores y asegurados, a partir de un documento base como la Carta Orgánica del IPS.  
+
+El citado Digesto Normativo fue puesto a disposición de todos los niveles jerárquicos y funcionarios en general del IPS, para que se realicen los comentarios, que se encuentra aprobado por Resolución CA Nº 012-021/2020 de fecha 18 de febrero de 2020 y \textit{que autoriza la publicación y actualización del Digesto Institucional}. La misma se encuentra publicada en la página institucional del IPS \footnote{https://portal.ips.gov.py/sistemas/ipsportal/transpariencia.php?t=2}
+
+Finalmente, muchas de las sugerencias que se citarán a continuación ya fueron propuestas en Informes Actuariales anteriores, tanto en el elaborado por la Asesoría Actuarial del IPS como por los realizados por organismos internacionales (OIT y OISS).
+
+\subsubsection{Inclusión y Exclusión de Aportes}
+
+\begin{enumerate}
+
+   
+    \item Bases Imponibles Mínimas
+
+Si bien el art. 20 de la Ley 427/73 establece que: “ninguna cotización será inferior a la que corresponda al salario o sueldo mínimos legalmente fijados, aunque se trate de Aprendices que no reciben salario en dinero”, existen normativas que permiten realizar aportes inferiores al aporte mínimo requerido para ser computado como un mes de antigüedad, lo que atenta contra la posibilidad de acumular años de aportes para acceder a una jubilación en función de los años de trabajo.
+ 
+El Decreto N° 8.730/60 en su art. 1 inciso e) establece:\textit {Entiéndase como base mínima sobre el cual deben los jornaleros y obreros a destajo hacer sus aportes, el importe total de diez y ocho días de jornales legales mínimos fijados por el Departamento Nacional del Trabajo, y el correspondiente a treinta días para los empleados; donde si bien es cierto que existen muchos trabajadores que trabajan a jornal diario y efectivamente sólo 18 días, existe un gran incentivo a declarar sobre el mínimo y no sobre lo efectivamente trabajado.  Por lo que se requiere fortalecer los controles}.
+
+En el caso de los docentes privados, la ley 4370/11 en su art. 4 establece: \textit {La base imponible de los sujetos de la presente Ley será la suma total de las remuneraciones realmente percibidas, ya sea en una sola entidad, o bajo la modalidad de pluriempleo; con lo cual si bien es cierto que existen docentes con pocas horas cátedras durante el mes, al no tener una base imponible mínima, esto genera  no sólo una dificultad a la hora acumular antigüedad para la jubilación, sino que termina desfinanciando al Seguro de Salud}.
+
+\item Indemnizaciones o Gratificaciones extraordinarias
+
+Con el objeto de que el aporte para la jubilación represente mejor el esfuerzo contributivo del asegurado, es necesario excluir el aporte sobre las indemnizaciones dentro de los 36 últimos meses de aporte para el cálculo del monto de la jubilación. Si bien actualmente la Dirección de Jubilaciones excluye la indemnización para el cálculo de la jubilación, la Dirección de Aporte Obrero Patronal admite la contribución sobre el total de los ingresos incluyendo la indemnización. Esta situación podría generar demandas judiciales por parte de los asegurados y que obligarían al IPS a considerar las indemnizaciones para el cálculo del haber jubilatorio. 
+
+Situación similar ocurre con las gratificaciones que algunas empresas suelen realizar por término de la relación laboral.  La idea sobre la que se basa el sistema previsional, es que el beneficio a ser otorgado tenga relación con los ingresos habituales del trabajador, es así que si el trabajador recibe una gratificación o bono anual por desempeño, esto se debe incluir como base para los aportes, mientras que si es una cuestión ocasional o por término de relación laboral, no aplicaría.
+
+Lo explicado aquí, tiene relevancia para el sistema previsional, mientras que si se considera para el sistema de salud, puede que presente otra situación, atendiendo que es un modelo basado en la distribución del riesgo financiado con la redistribución de los ingresos.
+
+\item Aportes como trabajador independiente
+
+A través de la Ley 4933/13 se autoriza la incorporación voluntaria de trabajadores independientes y mediante la RCA Nº 062-014/13, del 30/07/13 se reglamentó sus procedimientos, donde en el art. 11) se estableció que \textit{las bases imponibles no serán inferiores al valor correspondiente a  1 (un) Salario Mínimo Legal para actividades diversas no especificadas, y regirán hasta que se establezcan las Bases Imponibles Definitivas, las que estarán basadas en el cumplimiento de las obligaciones tributarias de cada categoría de afiliados; a este efecto, se formularán y presentarán para su aprobación por el Poder Ejecutivo, las Reglamentaciones Generales que sean necesarias}.
+
+A cinco años de su implementación, resulta oportuno realizar una revisión de la reglamentación, y en especial a la metodología para establecer y confirmar las bases imponibles, ya que existen aportes basados sobre presuntos ingresos muy elevados, que no se solicitan justificación o validación, y terminan generando beneficios elevados no vinculados a los ingresos reales del trabajador.
+
+\item Aportes durante reposos
+
+Por el lado de los aportes que sí se deberían tener en cuenta, los asegurados que se encuentran con reposo (ya sea por maternidad, enfermedad común o por accidentes de trabajo), no aportan para su jubilación ni se le reconoce dicho periodo.  
+
+En el caso de las mujeres en particular, con la nueva normativa (Ley 5508/15), si bien se amplió el periodo de permiso por maternidad, pasando de 14 a 18 semanas, y se pasará a cobrar el 100\% de su remuneración al momento del parte como subsidio durante el permiso, no se previeron los aportes a la Seguridad Social.  Y es así, que una mujer que tenga 4 reposos por maternidad durante su vida laboral, pierde un año y medio de aportes para su jubilación.
+
+Esta situación no se encuentra prevista por la legislación vigente y debe ser corregida ya sea por medio de aportes efectivos o por el reconocimiento o cómputo del tiempo de reposo.  Para cualquiera de las opciones, se deberá establecer por medio de una nueva ley.
+
+\end{enumerate}
+
+\subsubsection{Portabilidad de Aportes}
+
+En el Paraguay, dependiendo del sector en que un trabajador se encuentre, puede estar aportando al IPS u otra Caja de Jubilaciones (Caja Fiscal, Caja Municipal, Caja Bancaria, etc.) y en un ambiente de alta movilidad laboral, al cambiar de sector se verá obligado a realizar contribuciones a otra Caja Previsional, no pudiendo realizar la portabilidad de sus aportes (transferir los aportes de una Caja a otra).
+
+Este problema fue solucionado en parte mediante la Ley Intercajas con la que se pueden computar los aportes a distintas Cajas Previsionales en Paraguay a los efectos de cumplir el requisito de antigüedad, con la salvedad que existe una diversidad de requisitos (antigüedad y años de aporte) entre las distintas Cajas.
+
+Se debería ver la posibilidad de converger a requisitos estandarizados de todas las Cajas de manera a evitar incentivos y/o penalidades al cambiar de entidad.  Adicionalmente se debería considerar la posibilidad de incluir a las Cajas Privadas (Mutuales) en el sistema de Intercajas.
+
+\subsubsection{Requisitos de acceso a las prestaciones y ajustes a largo plazo}
+
+Si bien la edad mínima para la Jubilación Ordinaria es de 60 años, una importante proporción de trabajadores hace uso del retiro anticipado logrando un beneficio mínimo del 80\% del salario promedio con al menos 55 años de edad y 30 años de aporte.  Atendiendo la proporción de personas que se acogen a este beneficio se lo puede catalogar como un sub-régimen y no como un beneficio de utilización excepcional. Pocos países de la región mantienen aún la posibilidad de un retiro a tan temprana edad y/o con tasas de sustitución tan altas.  
+
+Considerando las esperanzas de vida observadas en Paraguay, una persona a los 55 años de edad, no sólo se encuentra lejos del decaimiento en la actividad laboral, sino que paulatinamente vivirá más tiempo, y al no existir un sistema de ajustes automático que equilibre los aportes realizados con los beneficios a recibir, se requerirán más fondos para el pago de beneficios de lo originalmente estimado.
+
+Los países que han mantenido edades bajas para la jubilación, han realizado modificaciones reduciendo la cuantía de dichos beneficios de manera a mantener la sostenibilidad financiera. 
+
+En lo que respecta a la Tasa de Reemplazo o Sustitución, el tener valores tan altos, especialmente para el Retiro Anticipado, genera un desincentivo para aportar a las personas que han iniciado su vida laboral a temprana edad.  A modo de ejemplo, una persona que comienza a trabajar a los 18 años, a los 48 años ya podría acumular la máxima cantidad de aportes requerida, debiendo sólo esperar a cumplir el requisito de edad.
+
+Si bien se puede argumentar que tener una Tasa de Reemplazo o Sustitución baja para trabajadores de salario bajos, reduciría la calidad de vida del jubilado, dicha tasa no necesariamente debe ser fija. Es decir, para los de ingresos más bajos puede ser alta, para los de ingresos superiores más baja y/o tener topes sobre cuál debe ser la pensión máxima.  Lo recomendable no es dar tasas de sustitución altas, para luego hacer trampa con los ajustes de indexación.
+
+Por dichos motivos, sería conveniente el trazado de una convergencia hacia una edad de retiro única para la Jubilación Ordinaria y Proporcional que refleje los efectos de una mayor esperanza de vida, así como analizar la posibilidad de establecer un sistema de puntos entre años de aporte y edad de retiro para determinar la Tasa de Sustitución teniendo en cuenta las sugerencias del párrafo precedente, donde el máximo beneficio en términos de Tasa de Sustitución se le debe otorgar a la persona que cuenta con mayor cantidad de años de aportes y edad al momento del retiro.
+
+\subsubsection{Base reguladora}
+
+Tanto la actualización de los salarios como el incremento de 36 a 120 meses en el plazo considerado como Base Reguladora (BR), son las principales innovaciones introducidas con la Ley 4370/11, restringida en principio a un grupo específico de aportantes como son los Docentes del Sector Privado (DP), mediante su reciente inclusión al seguro de vejez.  No obstante, la implementación a todos los grupos es algo que se viene discutiendo a nivel técnico desde hace bastante tiempo y se daría gradualmente, por lo que resulta de suma importancia el estudio de las técnicas de ajuste de los salarios y el efecto de la extensión del periodo considerado.
+
+Actualmente en la fórmula de los beneficios que otorga el IPS se consideran los últimos salarios del trabajador en términos nominales, es decir, sin ningún tipo de ajuste que reconozca la pérdida de poder adquisitivo en el tiempo a lo largo de la vida laboral. Pero, el hecho de considerar los salarios aportados durante los últimos años previos al retiro, en el caso de jubilación por vejez, provoca una sobrevaloración, generando inequidad para quienes han realizado un igual o mayor esfuerzo contributivo en años anteriores a los considerados para la BR, pero que han dejado de aportar poco tiempo antes del momento de la edad de retiro.
+
+Como ejemplo, trabajadores con carreras laborales basadas en el esfuerzo físico que finalizan su ciclo de mayor productividad varios años antes de la edad de retiro y que pueden reinsertarse sólo con salarios bajos debido a su avanzada edad, no verían reflejado en su beneficio el esfuerzo realizado en los períodos anteriores, lo que podría incentivarlos a no declarar los últimos ingresos. En cambio, trabajadores con carreras “de oficina” que aportaron la mayor parte del tiempo por el salario mínimo, podrían acrecentar su beneficio si sólo en los últimos años consiguen ascensos u otros trabajos. 
+
+El primer problema que se presenta con una BR que tome pocos años es que hace pesar sólo el final de la carrera laboral en el salario promedio, lo cual puede incentivar la evasión a la hora de realizar aportes sobre el salario total durante el período que no se toma en cuenta en el momento del cálculo para la jubilación, generando inequidades y desfinanciamiento al sistema. Asimismo, puede implicar que algunos trabajadores exageren la carga laboral sobre los últimos años, declarando varios trabajos o promociones que impliquen aumentos de la nómina salarial, a efectos de conseguir un mejor beneficio. Si bien existe una norma en la legislación actual que limita dichas situaciones, en la práctica es de difícil aplicación. 
+
+Con la Ley 4370/11 se busca mitigar el efecto de la inflación cuando se incrementan los años en la BR, evitar una sobrevaloración en el valor final de la pensión y que exista una relación entre los aportes y beneficios, en síntesis, que las jubilaciones sean suficientes para satisfacer las necesidades personales con fuentes de financiación que las respalden y reflejando el esfuerzo contributivo.
+
+Ante todo lo expuesto, se sugiere especialmente en Jubilación por Vejez, la utilización de un período mínimo de 20 años y que inclusive pueda abarcar la mayor parte de la carrera laboral para la Base Reguladora, lo cual conllevaría una menor volatilidad para determinar el beneficio para el trabajador y mayores incentivos al aporte. La introducción de este tipo de modificaciones podría realizarse en forma paulatina, por ejemplo, incorporando un año en la consideración del promedio por cada año calendario transcurrido, hasta alcanzar el valor total requerido. 
+
+\subsection{Actualización y Ajuste por Índice de salarios}
+
+Las actualizaciones de valores se refieren a dos temas principalmente, uno en relación a los salarios que son considerados en la BR para la determinación del beneficio; y el otro en relación a los ajustes que se aplican a los beneficios.  En ambos casos la justificación de realizar actualizaciones, es la de tratar en cierto grado paliar la pérdida del poder adquisitivo del dinero.
+
+Actualmente para la determinación del beneficio no existe actualización alguna sobre los salarios y los mismos se consideran en términos nominales, que en un escenario de baja inflación y pocos años en la BR no tendría un impacto significativo si los salarios considerados son próximos a la fecha de retiro.  En cambio, para los casos en que el tiempo transcurrido entre el último aporte y la fecha de retiro es considerable, el beneficio que resulte ya tendría un impacto significativo; como ha ocurrido con muchas jubilaciones con la introducción de la Jubilación Proporcional.
+
+En caso que se incremente el lapso de años considerados en la BR a 20 años o más, será importante que utilicen actualizaciones siempre y cuando vaya acompañado de una disminución de la Tasa de Sustitución.
+
+En el caso de los ajustes a las Jubilaciones y Pensiones existe una distribución que no es equitativa con el actual Sistema de Ajustes de las Jubilaciones y Pensiones. Esto se produce porque todas las Jubilaciones y Pensiones reciben el mismo porcentaje del aumento, pero los aportes no aumentan todos en la misma proporción cuando varía el Salario Mínimo Legal Vigente.
+
+Se podría tomar como ejemplo el modelo canadiense donde por ley están obligados a realizar una Evaluación Actuarial cada 3 años. Y en caso de que dicho estudio muestre que no existe sostenibilidad del Sistema, se establece que los ministros de Finanzas de todas las provincias deben reunirse y ver alternativas de solución. Tiene un plazo para presentar un plan de acción al Congreso, y si no se resuelve o no se ponen de acuerdo los ministros, la indexación de jubilaciones ya no se realiza.
+
+En ambos casos se habló de la importancia de la actualización, pero no de qué tipo de índice utilizar para hacerlo.  Una alternativa sería un Índice de Salarios Declarados al Sistema, ya que variables como la Inflación o el Salario Mínimo se encuentran fuera del ámbito de influencia del Sistema Jubilatorio y las recaudaciones no necesariamente tienen un impacto proporcional cuando varían la Inflación o el Salario Mínimo.
+
+\subsubsection{Viudas menores de 40 años - Situación actual}
+
+El Art. 62 que se refiere al capítulo de las pensiones, de la Ley 98/92, en su inciso b) señala que… \textit{"La viuda o concubina o viudo menor de 40 (cuarenta) años de edad le corresponderá una indemnización equivalente a 3 (tres) anualidades de la pensión que le hubiere correspondido}.” 
+
+Con este artículo se restringe el pago de una Pensión a la Viuda/o que fuese menor de 40 años independientemente de los años de aportes que el cónyuge titular haya realizado. A modo de ejemplo, un trabajador que haya comenzado a aportar a los 18 años de edad y falleciese a los 43 años ya podría contar con 25 años de aportes y la viuda si fuese menor a 40 años de edad, no podría recibir una pensión sin considerar si cuenta o no con ingresos para sobrevivir.
+
+Esto representa una inequidad, por lo que sería conveniente la revisión de su aplicación y ver la posibilidad de aplicar una fórmula que tenga en cuenta no sólo la edad del derechohabiente, sino también los años de aporte y si la persona cuenta o no con alguna fuente de ingresos.
+
+ \subsubsection{activos - Inmuebles}
+ 
+ El Fondo de Jubilaciones cuenta con una cartera de inmuebles que en parte han sido adquiridos como inversiones inmobiliarias y la mayor parte como pago por créditos impagos o por aportes obrero-patronal.
+
+En la reforma de la Carta Orgánica del IPS en 1992 se produjeron dos situaciones que afectan directamente la administración de las inversiones inmobiliarias.  En primer lugar, se exige que la rentabilidad promedio sea igual a la tasa actuarial y en segundo lugar omitió el artículo que explícitamente establecía la enajenación de los inmuebles propiedad del IPS, con lo que se siguió la línea de pensamiento donde ya no es posible realizar la venta de los inmuebles.
+
+Los puntos expuestos precedentemente, sumando al hecho que el IPS no cuenta con profesionales especializados en administración y comercialización de inmuebles, generan restricciones a la hora de buscar la mayor rentabilidad con el menor riesgo.
+
+Se debería buscar los mecanismos legales para introducir una reforma de la Ley y brindar nuevamente al IPS la posibilidad de enajenar inmuebles, no sólo como un instrumento para mejorar la administración de los bienes de inversión del Fondo de Jubilaciones, sino que también brindará la posibilidad de obtener liquidez cuando lo requiera.
+
+
+\subsubsection{Aporte del Estado}
+
+Si bien la legislación establece un aporte estatal del 1,5\% sobre los salarios declarados al IPS, hasta el momento el Estado no ha realizado tal contribución, por lo que se deberían buscar alternativas como que el aporte del Estado no se encuentre vinculada a una variable que no controla como ser los salarios del mercado.
+
+En varios países de la región, el Estado aporta al Sistema Jubilatorio a través de fuentes específicas de financiamiento como ser: algunos puntos del Impuesto al Valor Agregado o un porcentaje de lo recaudado por impuestos al cigarrillo o al alcohol.
+
+
+\subsubsection{Equiparación de la contribución de la ANDE}
+
+La ANDE (Administración Nacional de Electricidad) cuenta con su propia Caja de Jubilaciones, la que en su momento fue instituida como complemento a la Jubilación otorgada por el IPS, donde pueden jubilarse con 750 (setecientos cincuenta) semanas de aporte y 60 años de edad, correspondiéndole el 42,5\% del promedio del salario de los últimos 36 (treinta y seis meses) y por cada 50 (cincuenta) semanas que sobrepase la antigüedad señalada, se aumentara a razón del 1,5\% (uno y medio por ciento) hasta 25 años de aporte (tasa de sustitución máxima de 57,5\%).
+
+Posteriormente la Caja de Jubilaciones del IPS fue reformada y la tasa de sustitución llegó al 100\%, pero la Caja de la ANDE mantuvo las condiciones y los trabajadores continúan aportando a ambas Cajas.
+
+Atendiendo que se debería buscar la unificación de criterios y tasas de aporte para la jubilación, los trabajadores de la ANDE deberían cumplir las condiciones del Régimen General y mantener la Caja Complementaria en busca de una mayor tasa de sustitución, atendiendo el nivel salarial y la restricción de jubilación máxima con que cuenta el IPS.
+
+\subsubsection{Rentabilidad no Ingresada}
+
+
+La Resolución C.A. N° 036-014/18 de fecha 05.06.18 en su Art. 1 establece: “\textit{Autoriza la generación de Planillas Complementarias de aquellas Patronales que requiere ingresar al Aporte Obrero Patronal por el periodo de tiempo que las mismas no ingresaron aporte a favor de los trabajadores, por haber omitido la comunicación del ingreso desde el inicio de la relación laboral, u otros motivos y que manifiestan su conformidad en cuanto a la liquidación practicada}”.
+
+Una posible consecuencia de esta normativa sería la de incentivar a los empleadores a esperar mucho tiempo para inscribir a sus empleados al Seguro Social, pues la tasa que se cobra por rentabilidad no ingresada es baja, por lo tanto, se debería plantear la alternativa de cobrar tasas más elevadas para desincentivar esta situación en los empleadores.
+
+Por otro lado, es importante recordar que durante el periodo que los empleados no estuvieron inscriptos al Seguro Social no podían gozar de ninguna protección social.
+
+Y una de las características principales de esta modalidad, es que depende de la predisposición del patrón para hacerse cargo de la situación, por lo que se debería analizar la posibilidad de establecer por ley la incorporación de aportes durante el tiempo trabajado no registrado con mayores multas (como ocurre en otros países) y tasa de interés a aplicar a la rentabilidad no ingresada.
+
+
+\subsection{Beneficio Adicional Anual}
+
+Se debe adoptar una clara definición respecto al Beneficio Adicional Anual (BAA) que es un importe equivalente a la doceava parte de las remuneraciones devengadas durante el año calendario (similar a la definición de aguinaldo), debiendo establecerse una norma definitiva que no requiera anualmente un tratamiento discrecional por parte del Consejo de Administración. 
+
+Un sistema de reparto utiliza las valuaciones para predecir con antelación la necesidad de efectuar variaciones en los aportes y/o en su fórmula para determinar los beneficios, de manera a mantener el equilibrio financiero del sistema, y se deberían buscar alternativas de financiamiento o modificar esta prestación, ya que resulta falto de coherencia el hecho de no aportar durante la condición de activo y cobrar el BAA como pasivo.
+
+Una alternativa sería que los trabajadores activos aporten sobre el aguinaldo el 12,5\% (doce y medio por ciento) para financiar el BAA.  El descuento sería directamente al trabajador e iría todo lo recaudado al Fondo de Jubilaciones.  Para concretarlo se deben promover modificaciones legislativas como ser la Carta Orgánica del IPS donde define el Salario y excluye expresamente al aguinaldo como base imponible, así como las modificaciones necesarias al Código Laboral que se expiden sobre estos temas.
+
+Otra alternativa sería pagar un BAA uniforme para todos y que no se encuentre vinculado al monto de los beneficios percibidos durante la etapa pasiva, esto es atendiendo a que el pago de dicho beneficio termina dependiente de las ganancias actuariales y financieras que pudiera haber y no de los aportes realizados.
+
+\subsection{Inveresiones - Buena Gobernanza}
+
+El informe técnico 15 de la Asociación Internacional de Seguridad Social (AISS) “\textit{Administración financiera y gestión de riesgos de la seguridad social}” plantea que: “\textit{Las instituciones de seguridad social son vulnerables a ciertos riesgos a muy largo plazo que conciernen obligaciones financieras como el crecimiento real de los ingresos, los cambios estructurales en la economía, el desempleo, la invalidez, el futuro incremento de los costos de atención médica y las mejoras generales de la longevidad de toda la población. Para las instituciones de seguridad social, algunos vastos sectores de riesgos son los riesgos operacionales, los riesgos de liquidez, los riesgos de pasivos, los riesgos económicos, los riesgos de inversión, los riesgos de catástrofes y los riesgos políticos.
+
+Cada organización debe diseñar sus propios procesos para evaluar, supervisar y administrar los riesgos. El proceso debe ser oficial, regular y continuo, completado de vez en cuando por estudios especiales e investigaciones sobre exposiciones a riesgos particulares. Debe divulgarse con regularidad un resumen de la evaluación de los riesgos y un informe sobre las medidas adoptadas para gestionar los riesgos}.”
+
+En los Fondos de Inversión, la política de riesgos a ser asumida depende mucho de las personas que están a cargo de administrarlas, de su tolerancia al riesgo, conocimiento y experiencia. Es necesario contar con una reglamentación que limite claramente la posibilidad de inversión en función a los riesgos. El impacto de las condiciones económicas es una de las aristas a tener en cuenta, conjuntamente con los niveles de empleo, cobertura, salarios y expectativa de vida.
+
+Actualmente el Fondo de Reservas de la Caja de Jubilaciones del IPS requiere una mayor diversificación en plazos e instrumentos que, si bien la política de inversiones debe ser establecida por el propio Instituto, esto debe ser en el marco de unas reglas que establezcan los límites y prohibiciones, además de una constante supervisión por parte de entes especializados en la materia.
+
+Las normativas buscan la seguridad y rentabilidad de las inversiones, por lo que se trata de inducir a que las decisiones de inversión se basen en la minimización del riesgo (diversificación y prudencia) y el profesionalismo de los tomadores de decisión.
+
+Se tomaron nuevos instrumentos financieros en el proceso de diversificación de riesgos como Bonos y Préstamos con Fianzas de Organismos Multilaterales, se creó la Dirección de Inversiones, pero se eliminaron el Comité de Inversiones y el Comité Asesor de Políticas de Inversión, y no se avanzó con el Comité de Riesgo ni el ALM (Asset Liability Management), contrariamente a lo recomendando por las Directrices de la AISS sobre la Inversión de los Fondos de la Seguridad Social.
+
+
+La implementación de esta normativa requiere de un estricto control, tanto para la determinación de que las inversiones tengan conveniencia económica como que las necesidades reales de infraestructura sean satisfechas a precios de mercado.  Es decir, la decisión de realizar estas inversiones debe ser considerada en el contexto de costo de oportunidad, riesgo y rentabilidad. 
+
+A través de la implementación del art. 4 de la Ley 5655/16 que \textit{permite realizar inversiones inmobiliarias en su propio patrimonio, en cualquiera de los fondos administrados por el Instituto de Previsión Social, únicamente en caso de clara conveniencia económica y social para la Institución… hasta un límite equivalente al 40\% (cuarenta por ciento) de las rentas obtenidas por las inversiones y colocaciones financieras correspondientes al ejercicio inmediato anterior.”, se creó el Fideicomiso de Titularización y Administración y Pago “IPS- Fondo de Salud de Enfermedad – Maternidad}” para la construcción de hospitales. 
+
+Desde el Ministerio de Hacienda y el Banco Central del Paraguay hace ya un buen tiempo se viene hablando de la posibilidad de establecer la Superintendencia de Pensiones y un Marco Regulador para las inversiones de Fondos Previsionales, lo cual es visto con buenos ojos a nivel técnico.
+
+\subsection{Fondo Independiente Único}
+
+Actualmente la legislación vigente del IPS contempla la existencia de dos Fondos para la Caja de Jubilaciones: el “Fondo Común de Jubilaciones y Pensiones” y el “Fondo de Previsiones para ajuste de Jubilaciones y Pensiones”.  Adicionalmente se contempla también la existencia de un Fondo para Imprevistos que podrá ser utilizado cuando las necesidades o circunstancias especiales las justifiquen, sin especificar si se refiere a la Caja de Jubilaciones o al Seguro de Salud.
+
+Desde un punto de vista conceptual y actuarial no se justifica la existencia de dos Fondos para un mismo propósito que consiste en atender las obligaciones derivadas de Jubilaciones y Pensiones.  Sería una aberración si se llegase a la situación que no haya fondos para cumplir con el pago de Jubilaciones y Pensiones y sí para realizar ajustes.
+
+Hasta el año 2017 se contaban con informe de gestión por fondos (Jubilaciones, Salud y Administración), y a partir del 2018 ya no lo realizan, dificultando el análisis por fondo.  Por lo que, si bien es entendible que al ser una única entidad, se debería poder tener informes de gestiones individualizado por fondo.
+
+Es por estos motivos que se debe avanzar en la separación legal del Fondo de Jubilaciones de los recursos administrativos y el de Salud; y manejarlo como un Fideicomiso con Estados Contables independientes.  Esto no sólo brindará mayor transparencia a la administración del Fondo, sino que también blindará los recursos ante potenciales demandas de otra índole (Seguro de Salud, temas administrativos). \cite{IA_IPS2018}
+
+
+
+
+\begin{thebibliography}{0}
+
+ \bibitem{constitucion} FERNANDEZ AREVALOS, EVELIO Y OTROS. Constitución de la República del Paraguay Comentada, Concordada y Comparada (Tomo I Art. 1 al 181). 2019. Asunción.
+ 
+  \bibitem{IA_IPS2018} Estudios y Proyecciones Actuariales del Régimen de Jubilaciones y Pensiones 2018 - 2100 Del Instituto de Previsón Social. IPS, 3era Edición, 2018.
+  
+  \bibitem{DI_IPS (2020)} Resolución CA Nº 012-024/2020 POR LA QUE SE AUTORIZA LA PUBLICACIÓN Y ACTUALIZACIÓN DEL DIGESTO INSTITUCIONAL EN EL SITIO WEB DEL INSTITUTO DE PREVISIÓN SOCIAL. 2020. Asunción
+  
+  \bibitem{ILO-FACTS}, T. I. (2002). The ILO Pension Model (ILO-POP) A Technical Guide. ILO.
+  
+  \bibitem{ILO-FACTS}, T. I. (2002). The ILO Population Projection Model (ILO-POP) A Technical Guide. ILO.
+
+  \bibitem{BCP. (2017)}. Informe de Estabilidad Financiera. Asunción: BCP.
+
+  \bibitem{BOWER Y OTROS. (1997)}. Actuarial Mathematics. The Society of Actuaries.
+  
+  \bibitem{CELADE. (2017)}. Tasa Global de Fecundidad. Obtenido de www.celade.cepal.org
+
+  \bibitem{DGEEC. (2005)}. Dirección General de Estadística, Encuestas y Censos. Obtenido de www.dgeec.gov.py
+
+  \bibitem{DGEEC. (Diciembre de 2005)}. Dirección General de Estadística, Encuestas y Censos. Obtenido de www.dgeec.gov.py
+
+ \bibitem{DGEEC. (2005)}. Paraguay. Proyección de la Población Nacional por sexo y edad, 2000-2050. Asunción: DGEEC Publicaciones.
+
+  \bibitem{DGEEC. (2016)}. Boletín de Empleo. Asunción.
+
+  \bibitem{DGEEC. (2016)}. Paraguay Nacional Proyección de la Población, Áreas Urbana y Rural por Sexo y Edad, 2000-2025. Revisión 2015. San Lorenzo.
+
+  \bibitem{INTERNATIONAL ACTUARIAL ASSOCIATION, IAA. (2014).} International Standard of Actuarial Practice 2 – Financial Analysis of Social Security Programs. IAA.
+
+    \bibitem{IPS. (2015).} Estudios y Proyecciones Actuariales del Régimen de Jubilaciones y Pensiones 2015 – 2100 del Instituto de Previsión Social. Asunción.
+
+  \bibitem{OIT. (2002).} Modelo de Proyecciones Demográficas de la OIT. Guía Técnica. Versión 1.1. Ginebra.
+
+  \bibitem{OIT. (2013).} 19.a Conferencia Internacional de Estadísticos del Trabajo. Ginebra.
+
+  \bibitem{OIT. (2015).} Tasa de participación en la fuerza de trabajo. Obtenido de www.ilo.org
+
+  \bibitem{PLAMONDON, P. (1999).} Actuarial practice in social security. ILO Quantitative Methods in Social Protection Series.
+
+  \bibitem{PLAMONDON; Y OTROS. (1999).} Financing social protection. ILO Quantitative Methods in Social Protection Series.
+
+  %\bibitem{Plamondon, P., Drouin, A., Binet, G., Cichon, M., McGilivray, W., Bérard, M., Perez-Montas, H. (2002).} Actuarial practice in social security. Ginebra: Oxford.
+
+  \bibitem{Rofman, R., &amp; Oliveri, M. L. (2012).}  Pension Covarage in Latin America: Trends and Determinants. Washington: The World Bank.
+
+  \bibitem{SUBRAMANIAM IYER. (1999).} Actuarial mathematics of social security pensions. ILO Quantitative Methods in Social Protection Series.
+  
+  \bibitem{HALLEY M, PEDRO M. (2010)} Manual Legal del Seguro Social del IPS. 2010. Asunción. 
+  
+  \bibitem{METSS. (2019)} Resolución MTEESS 2660/2019 QUE REGULA LA INSCRIPCIÓN DE LOS TRABAJADORES DOMÉSTICOS AL INSTITUTO DE PREVISIÓN SOCIAL BAJO LA MODALIDAD DE EMPLEO PARCIAL. 2019. Asunción.
+  
+  \bibitem{IPS. (2020)} Resolución CA Nº 004-001/2020 POR LA QUE SE AUTORIZA EL INCREMENTO DEL HABER MÍNIMO JUBILATORIO AL 50\% DEL SALARIO MÍNIMO LEGAL VIGENTE. 2020. Asunción.
+  
+   \bibitem{IPS. (2021)} Resolución CA Nº 017-001/2021 POR LA QUE SE AUTORIZA EL INCREMENTO DEL HABER MÍNIMO JUBILATORIO AL 75\% DEL SALARIO MÍNIMO LEGAL VIGENTE. 2021. Asunción.
+  
+\end{thebibliography}
+
+
+\caption{Anexos}
+
+\begin{landscape}
+\begin{table}[H]
+\begin{center}
+\caption{\bf{Evolución del Salario Mínimo Legal.}}
+\label{eph2}
+\begin{tabular}{l|rrrrrrrrrrrrrrr}
+\scriptsize
+\input{BCP_sml_year_mes}
+\end{tabular}
+	\item \footnotesize Fuente : Banco Central del Paraguay. 
+		%\item \footnotesize Nota : 
+\end{center}
+\end{table} 
+\end{landscape}
+
+
+
+
+\end{document}
+
+

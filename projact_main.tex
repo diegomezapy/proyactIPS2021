@@ -1,0 +1,181 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{soul}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{latexsym,amsmath,amssymb,amsfonts,cancel,stmaryrd,amsthm}%amsthm permite cargar estilo de teorema
+\usepackage[left=2cm,right=1.5cm,top=1.5cm, bottom=1.5cm]{geometry}
+%\usepackage{hyperref}
+\usepackage[hyperindex=true,breaklinks=true,colorlinks=true,linkcolor=black]{hyperref}%Crea hipervínculo al índice
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{setspace}%para reducir espacios entre las lineas de la tabla de algun parrafo o lista
+%\usepackage{dirtytalk}
+\usepackage{enumitem} % para items con letras
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+\setlength{\headheight}{0.6mm}
+\usepackage{ragged2e}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% definir parametros de los diagramas
+\usepackage{tikz}
+\usepackage{lscape}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes,arrows,arrows,positioning,fit}
+\usetikzlibrary{shapes,arrows}
+% Define block styles
+\tikzstyle{block} = [rectangle, draw, fill=white!20, 
+text width=6em, text centered, rounded corners, minimum height=2em ]
+\tikzstyle{line} = [draw, -latex']
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\definecolor{lightgray}{gray}{0.85}
+\let\olditemize\itemize %para reducir espacio entre los items de itemize
+\def\itemize{\olditemize\itemsep=0pt }
+
+\usepackage{fancyhdr}
+\fancyhead{} 
+\pagestyle{fancy}
+\fancyhf{
+%\cfoot{\thepage}
+\rfoot[]{\thepage}
+%\renewcommand{\baselinestretch}{-1.2}
+%\lfoot{\footnotesize Asesoría Actuarial}
+%\lfoot{\footnotesize Valuación Actuarial del Fondo de Jubilaciones y Pensiones del IPS}
+%\rfoot{\footnotesize Valuación Actuarial del Fondo de Jubilaciones y Pensiones} % texto izquierda de la cabecera
+}
+
+%\fancyhead[LO]{\nouppercase{\leftmark}} % En las páginas impares, parte izquierda del encabezado, aparecerá el nombre de capítulo
+%\fancyhead[RE]{\nouppercase{\rightmark}} % En las páginas pares, parte derecha del encabezado, aparecerá el nombre de sección
+\rhead{\nouppercase{\leftmark}}
+\renewcommand{\headrulewidth}{0.5 pt} % Ancho de la línea horizontal bajo el encabezado, colocar 0 para que no aparezca
+\newcommand{\G}{\cancel{G}}
+
+
+
+\begin{document}
+
+
+\renewcommand{\listtablename}{\bf{Lista de Tablas}}
+\renewcommand{\tablename}{\bf{Tabla}}% CAMBIA EL NOMBRE DE LOS CUADROS A TABLAS.
+\renewcommand{\figurename}{\bf{Figura}}
+
+
+\newpage
+\thispagestyle{empty}
+\begin{center}
+\LARGE\bf {Estudios y Proyecciones Actuariales}\\
+\LARGE\bf {del}\\
+\LARGE\bf {Fondo de Jubilaciones y Pensiones}\\
+\LARGE\bf {del Instituto de Previsión Social}\\
+\LARGE\bf {2021 - 2100}\\
+%\Large\bf {(Informe Extenso)}\\
+\vspace{3cm}
+
+
+\begin{figure}[h!]
+\begin{center}
+            \label{fig:logoIPS}
+                    \includegraphics[scale=1]{logoIPS.eps}
+                    \end{center}
+\end{figure}
+
+
+\vspace{2cm}
+\LARGE\bf {Asesoría Actuarial}\\
+\LARGE\bf {Año 2021}\\
+\vspace{2cm}
+\end{center}
+
+%INDICE + LISTA DE TABLAS
+\newpage
+\tableofcontents
+%\newpage
+%\listoftables
+
+
+
+
+\newpage
+\section{Introducción}
+
+El presente trabajo constituye el Estudio Actuarial del Fondo de Jubilaciones y Pensiones del Instituto de Previsión Social (IPS) de acuerdo con lo establecido en el Art. 26 del Dto. Ley Nº 1860/50, aprobado por Ley Nº 375/56, modificado por el Art. 2º 
+de la Ley Nº 98/92.
+
+El propósito del Estudio Actuarial de un sistema de previsión social es dar un diagnóstico sobre el estatus actual de los elementos de un sistema previsional, así como de sus expectativas a futuro. Las proyecciones elaboradas constituyen una herramienta
+ indispensable para la toma de decisiones, buscando mantener la sostenibilidad a mediano y largo plazo de un Sistema de Jubilaciones y Pensiones como el administrado por el Instituto de Previsión Social.
+
+Un Estudio Actuarial requiere de un modelo matemático "multi-enfoque" (demográfico, económico y financiero a la vez), por lo que para la realización del presente trabajo se han considerado aspectos fundamentales, expuestos en capítulos para una mejor co
+mprensión de su contenido. 
+
+En el Capítulo 1 se realiza una descripción del contexto actual del Paraguay, dividido en secciones que se refieren al contexto demográfico, laboral y económico. En el Capítulo 2, se consideran las perspectivas para el Paraguay, para un periodo de 79 añ
+os, tomando como año base 2020 y la proyección hasta el año 2100.  Las secciones hacen referencia a la proyección demográfica y a la proyección del escenario laboral.
+
+En el Capítulo 3, se expone la situación actual del IPS, estableciendo el marco legal, su ámbito de aplicación, cómo se obtienen los recursos financieros para la financiación de los servicios, tanto de jubilación como de salud, las prestaciones de jubil
+aciones y pensiones que se otorgan, así como los requisitos para acceder a ellos.
+
+En lo que respecta a información sobre la envergadura del IPS, se presentan indicadores tales como: la cantidad total de beneficios pagados en jubilaciones y pensiones (stock), los nuevos beneficios pagados en jubilaciones y pensiones y la distribución 
+de años de aportes. Otro aspecto importante que trata este capítulo se refiere al Fondo de Jubilaciones y Pensiones, donde se realiza un análisis de los ingresos y los gastos reales de la Institución.
+
+En el Capítulo 4, se expone la metodología utilizada para las proyecciones, donde se describen los módulos generales o macros de: población, económico y de remuneraciones (salarios) del mercado laboral objetivo; así como los módulos específicos del sist
+ema, las proyecciones de jubilaciones, pensiones e invalidez, y el Fondo de Jubilaciones y Pensiones.  Este capítulo concluye con la sección donde se hace referencia a las principales fuentes de datos.
+
+En el Capítulo 5 se presentan los resultados de las proyecciones realizadas, primeramente, lo referente a Cobertura, los nuevos beneficios pagados (altas) según el tipo de beneficio y la relación aportantes/beneficios.  En la sección "Resultados Financi
+eros" se exponen las proyecciones de ingresos, egresos, así como la evolución del Fondo de Jubilaciones y Pensiones. Y en la última sección de este Capítulo se presenta el Balance Actuarial, que representa la diferencia entre el Valor Presente de las Ob
+ligaciones Futuras y la suma del Valor Presente de las Contribuciones Futuras y el Activo que respalda dichas obligaciones.
+
+Tanto para el análisis de la evolución del superávit/déficit corriente como del Fondo de Reservas y el Balance Actuarial se tomaron en cuenta varios escenarios, incluyendo el escenario base donde no se considera el aporte estatal y se paga el Beneficio 
+Adicional Anual regularmente.
+
+El documento finaliza con dos capítulos, uno dedicado a las conclusiones del estudio y el último dedicado a una serie de recomendaciones y comentarios de diversos aspectos, que van desde fallas técnicas y lagunas legales, hasta ajustes que se deberían i
+mplementar en busca de mayor equidad para los asegurados y en favor de la sostenibilidad del Sistema Previsional.
+
+
+%Resulta importante recalcar que los resultados de este informe presentan variaciones con respecto al Informe Actuarial anterior  (IPS, 2015) debido a cambios y actualizaciones ocurridos en los datos utilizados como insumos, como ser en la cantidad de p
+ersonas (población total menor) y las proyecciones de la Esperanza de Vida publicadas por la DGEEC, así como también debido a modificaciones metodológicas en la EPH a partir del año 2016.  Al mismo tiempo se contemplaron los cambios propios del IPS obse
+rvados en las probabilidades de altas por tipo de beneficio calculados con los valores observados en el año 2017, inferiores en comparación a los obtenidos en el año 2014, a pesar de conservar las mismas definiciones utilizadas en el Informe precedente.
+ 
+
+%\newpage
+%\input{projact_marcolegal}
+\newpage
+%\input{projact_metod}
+\newpage
+\input{projact_contexhist_demog}
+\newpage
+\input{projact_contexhist_laboral}
+\newpage
+\input{projact_contexhist_familia}
+\newpage
+\input{projact_contexhist_econom}
+\newpage
+\input{projact_datosIPSactivos}
+\newpage
+\input{projact_datosIPSactivos_dencot}
+\newpage
+\input{projact_datosIPSjubypens}
+
+
+
+\end{document}
+
+
+
+
+
+
+

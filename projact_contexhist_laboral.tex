@@ -1,0 +1,192 @@
+\newpage
+
+\subsection{Contexto laboral}\subsubsection{Actividad y Ocupación}
+
+En el Sistema de Jubilaciones y Pensiones administrado por el IPS, la
+financiación se encuentra basada en los aportes obrero-patronales de los
+asalariados, por lo que conocer el universo de potenciales afiliados es
+de vital importancia.
+
+Las estadísticas relacionadas al mercado de trabajo se obtienen de la
+EPH. De acuerdo con estos datos, la población paraguaya total en el año
+2020 es de 7.167.516 personas, de los cuales 5.094.469 tienen 15 o más
+años de edad, que para los fines de este informe será considerada como
+la población en edad de trabajar (PET), ésta representa un 71,1\% de la
+población total. Una subpoblación de interés es la Población
+Económicamente Activa (PEA) también llamada Fuerza de
+Trabajo\footnote{Fuerza de trabajo, también conocida como Población Económicamente Activa (PEA) de acuerdo a la 19ª Conferencia Internacional de Estadístic
+as del Trabajo - CIET.}, la cual está conformada por las personas
+ocupadas y desocupadas. La Fuerza de Trabajo en Paraguay está compuesta
+por un total de 3.678.114 de personas, que representan el 72,2\% de la
+PET \footnote{Este resultado difiere de las 
+publicaciones oficiales del INE por la definición especial considerada para la población en edad de trabajar.}.
+
+La tasa de desocupación o desempleo abierto afectó en el año 2020 al
+7,0\% de la PEA, lo que implica que alrededor de 256.678 personas
+estaban sin trabajo y buscaron activamente empleo en el periodo de
+referencia de la encuesta (últimos 7 días).
+
+La estructura de la población con respecto a estos indicadores del
+mercado laboral de las personas con 15 y más años de edad, para el
+periodo 2013-2020, se presenta en la Tabla 2.
+
+\begin{table}[H]
+\begin{center}
+\footnotesize
+\caption{\bf{Estructura de la población. Periodo 2013-2020}}
+\begin{tabular}{l|rrrrrr}
+\input{EPH_peaa}
+\end{tabular}
+                    \item \footnotesize Fuente : Encuesta Permanente de Hogares. 
+                    \item \footnotesize Nota : PT (Población Total), PET (Población en Edad de Trabajar) PEA (Población Económicamente Activa), PEI (Población Económicamente Inactiva), PO (Población Ocupada), PD (Población Desocupada) NR (No Responde). 
+\end{center}
+\end{table}
+
+\begin{center}
+\end{center}\begin{figure}[!ht]
+                    \caption{Estructura del mercado de trabajo. Año 2020}
+  \centering
+  \hspace*{-80pt}
+  \begin{tikzpicture}[node distance = 1cm, auto]
+  
+          % Place nodes
+    \node [block] (p) { \textbf{Población Total} 7.167.516 (100\%)};
+    \node [block,  below left=1cm and -0.3cm of p](pet) {\textbf{Población en Edad de Trabajar  (mayor a 14 años)} 5.094.469 (71.07\%)};
+    \node [block,  below right=1cm and -0.3cm of p](pm15) {\textbf{Población menor a 15 años} 2.073.047. (28.92\%)};
+    \node [block,  below left=1cm and -0.3cm of pet](pea) {\textbf{Población Económicamente Activa (PEA)} 3.678.114 (72.84\%)};
+    \node [block,  below right=1cm and -0.3cm of pet](pei) {\textbf{{Población Económicamente} Inactiva} 1.416.355. (28.04\%)};
+         \node [block,  below left=1cm and -0.3cm of pea](o) {\textbf{Ocupados} 3.421.436 (93.02\%)};
+    \node [block,  below right=1cm and -0.3cm of pea](d) {\textbf{Desocupados} 256.678 (6.97\%)}; 
+    % edges
+         \path [line] (p) -- (pet);
+         \path [line] (p) -- (pm15);
+         \path [line] (pet) -- (pea);
+         \path [line] (pet) -- (pei);
+         \path [line] (pea) -- (o);
+         \path [line] (pea) -- (d);
+  \end{tikzpicture}
+\end{figure}
+
+La Tasa de Actividad se define como el cociente entre la Población
+Económicamente Activa y la Población en Edad de Trabajar de 15 y más
+años de edad, en tanto que la Tasa de Ocupación se calcula como el
+cociente entre la Población Ocupada y la Población Económicamente
+Activa.
+
+Al observar la evolución de dichas tasas para el periodo 2013-2020, no
+se presentan variaciones significativas entre los años 2013 y 2019. En
+tanto que, para el año 2020 se aprecia una leve disminución de la tasa
+de ocupación en 1,35 puntos porcentuales , pasando de 94,37\% en el año
+2019 a 93,02\% para el año 2020.
+
+\begin{figure}[H]
+\begin{center}
+                    \caption{Tasas de Actividad y Ocupación. Periodo 2013-2020}
+                    \includegraphics[scale=0.55]{EPH_tasas_peaa.png}
+                                    \item \footnotesize Fuente : Instituto Nacional de Estadística.
+                                    \item \footnotesize Nota : Tasa de la Población en Edad de Trabajar=PET/PT, Tasa de Actividad=PEA/PET, Tasa de Ocupación=PO/PEA
+                    \end{center}
+\end{figure}
+
+La participación de la mujer paraguaya en el mercado laboral ha
+aumentado en la última década. En la Figura 12 se observa el
+comportamiento de la tasa de ocupación por sexo y por tramos de edad.
+
+\begin{figure}[H]
+\begin{center}
+                    \caption{Evolución de la Tasa de Actividad y de Ocupación por año, según sexo}
+                    \includegraphics[scale=0.55]{EPH_tasas_sexo_ocup_act.png}
+                                    \item \footnotesize Fuente : Instituto Nacional de Estadística.
+                                    \item \footnotesize Nota : Tasa de Ocupación=PO/PEA
+                    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+                    \caption{Tasas de Actividad y de Ocupación por tramos de edad, según sexo (Año 2020)}
+                    \includegraphics[scale=0.55]{EPH_tasasgq_ocupacion_actividad.png}
+                                    \item \footnotesize Fuente : Instituto Nacional de Estadística.
+                                    \item \footnotesize Nota : Tasa de Ocupación=PO/PEA
+                    \end{center}
+\end{figure}
+
+La Tasa de Actividad para el año 2020 desagregada por sexo, muestra que
+del total de hombres en edad de trabajar un 84,5\% participa en el
+mercado laboral, mientras que del total de mujeres en edad de trabajar
+un 60,4\% participa en el mercado laboral.
+
+En la distribución de la tasa por sexo según tramos de edad, las curvas
+presentan el siguiente comportamiento: valores bajos para los tramos en
+los cuales las personas asisten a la escuela/universidad, valores altos
+para edades intermedias y baja partic ipación en las edades de retiro y
+vejez.
+
+Cabe destacar que, la Tasa de Actividad de las mujeres es inferior a la
+de los hombres en todos los tramos etarios observados. En el caso de los
+hombres, éstos poseen prácticamente una participación total (cercana al
+100\%) en los grupos de edad compren didos entre los 30 - 49 años.
+
+\subsubsection{Asalarización}
+
+Cuando se analiza la Población Activa Ocupada, la segmentación de los
+trabajadores según tipo de ocupación indica que el 37,6\% de los mismos
+corresponden a mano de obra independiente (cuenta propia y empleador o
+patrón). El 54,6\% se encuentra en rela ción de dependencia
+clasificándose en Privado 37,9\%, Público 9,9\% y Doméstico 6,9\%. Y el
+restante 7,8\% pertenece a la categoría de trabajadores familiares no
+remunerados.
+
+La importancia de conocer la relación laboral del trabajador,
+\textit{"dependiente / independiente"} o \textit{"publico / privado"},
+radica en que, el ámbito de obligatoriedad para aportar al Sistema de
+Jubilaciones y Pensiones del IPS se restringe al\\
+textit\{``Empleado / Obrero Privado''\} y al
+\textit{"Empleado Doméstico \footnote{Clasificación de Categoría Ocupacional utilizada por la EPH del INE, corresponde al tipo de relación de dependencia en el trabajo con la entidad empleadora. Se distinguen den
+tro de este tipo de relación: al patrón o socio activo, trabajador por cuenta propia, empleado u obrero público, empleado u obrero de empresa privada, servicio doméstico (asalariado) y trabajador familiar no remunerado.}"}.
+
+\begin{table}[H]
+\begin{center}
+\scriptsize
+\caption{\bf{Población por categoría de ocupación}}
+\begin{tabular}{l|rrrrrr}
+\input{EPH_catepea_total}
+\end{tabular}
+                    \item \footnotesize Fuente : Encuesta Permanente de Hogares. 
+                    \item \footnotesize Nota : Trabajadores ocupados mayores de 14 años.
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\scriptsize
+\caption{\bf{Población por categoría de ocupación (en porcentaje). Periodo 2013-2020}}
+\begin{tabular}{l|rrrrrr}
+\input{EPH_catepea_porc}
+\end{tabular}
+                    \item \footnotesize Fuente : Encuesta Permanente de Hogares. 
+                    \item \footnotesize Nota : Trabajadores ocupados mayores de 14 años.
+\end{center}
+\end{table}
+
+En cuanto a las tendencias, se puede ver que la distribución de los
+porcentajes de trabajadores por tipo de ocupación es similar en los
+últimos 8 años.
+
+El sector privado ha tenido un aumento sostenido entre los años 2013 y
+2019, pasando de un valor aproximado de 37,1\% a un valor de 39,1\%.
+Para el año 2020 esta proporción disminuyó levemente alcanzando un valor
+de 37,9\%.
+
+Por otra parte, el sector de los empleados por cuenta propia ha tenido
+un aumento, pasando de un valor de 31,2\% en el año 2013 a un valor de
+32,8\% para el año 2020. Las demás categorías no han presentado
+variaciones importantes.
+
+\begin{figure}[H]
+\begin{center}
+                    \caption{Evolución de la cantidad de trabajadores por categoría de ocupación. Periodo 2013-2020}
+                    \includegraphics[scale=0.55]{EPH_catepea.png}
+                                    \item \footnotesize Fuente : Encuesta Permanente de Hogares.
+                                    %\item \footnotesize Nota : 
+                    \end{center}
+\end{figure}
